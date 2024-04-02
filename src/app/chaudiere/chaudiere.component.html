@@ -1,0 +1,14 @@
+<div>
+    <h3>{{chaudiere.nomClient}}</h3>
+    <p>Numéro série: {{chaudiere.numeroSerie}}</p>
+    <p>Adresse: {{chaudiere.adresseClient}}</p>
+    <p>Marque: {{chaudiere.marque}}</p>
+    <p>Modèle: {{chaudiere.modele}}</p>
+    <p>Date mise en service: {{chaudiere.dateMiseService | date: "dd/MM/yyyy à HH:mm:ss"}}</p>
+    <div *ngIf="chaudiere.interventions.length >= 1; else noInterventions">
+        <!-- TODO: afficher les interventions -->
+    </div>
+    <ng-template #noInterventions>
+        <p>Aucune interventions pour le moment.</p>
+    </ng-template>
+</div>
