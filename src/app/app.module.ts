@@ -10,6 +10,7 @@ import { ListChaudiereComponent } from './list-chaudiere/list-chaudiere.componen
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InterventionComponent } from './intervention/intervention.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ListInterventionComponent } from './list-intervention/list-intervention.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     ChaudiereComponent,
     ListChaudiereComponent,
-    InterventionComponent
+    InterventionComponent,
+    ListInterventionComponent
   ],
   imports: [
     BrowserModule,

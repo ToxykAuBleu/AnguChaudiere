@@ -22,8 +22,10 @@
             <!-- Liste des interventions -->
             <div *ngIf="interventions.length >= 1; else noInterventions">
                 <h4>Interventions</h4>
-                <div *ngFor="let intervention of interventions">
-                    <app-intervention [intervention]="intervention"></app-intervention>  
+                <div class="row row-cols-3">
+                    <div *ngFor="let intervention of interventions">
+                        <app-intervention class="col" [intervention]="intervention"></app-intervention>  
+                    </div>
                 </div>
             </div>
         </ng-template>

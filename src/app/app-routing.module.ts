@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ChaudiereComponent } from './chaudiere/chaudiere.component';
 import { ListChaudiereComponent } from './list-chaudiere/list-chaudiere.component';
+import { ListInterventionComponent } from './list-intervention/list-intervention.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
     path: 'chaudiere/:id',
     component: ChaudiereComponent
   },
+  {
+    path: 'interventions',
+    component: ListInterventionComponent
+  }
 ];
 
 @NgModule({
