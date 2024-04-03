@@ -6,7 +6,7 @@
         <p class="card-text">Marque: {{laChaudiere.marque}}</p>
         <p class="card-text">Modèle: {{laChaudiere.modele}}</p>
         <p class="card-text">Date mise en service: {{laChaudiere.dateMiseService | date: "dd/MM/yyyy à HH:mm:ss"}}</p>
-        <div *ngIf="laChaudiere.interventions.length >= 1; else noInterventions">
+        <div *ngIf="interventions.length >= 1; else noInterventions">
             <!-- TODO: afficher les interventions -->
         </div>
         <ng-template #noInterventions>

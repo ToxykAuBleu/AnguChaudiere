@@ -16,8 +16,7 @@ export class ChaudieresService {
         adresseClient: "3 rue de la raviolie, 64100",
         dateMiseService: new Date(2024, 3, 20, 12, 23, 14),
         marque: "Tefal",
-        modele: "Quarante Deux",
-        interventions: []
+        modele: "Quarante Deux"
       }
     ];
   }

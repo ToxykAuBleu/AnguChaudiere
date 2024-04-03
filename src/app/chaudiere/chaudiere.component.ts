@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Chaudiere } from '../models/chaudiere.model';
 import { ChaudieresService } from '../services/chaudieres.service';
 import { ActivatedRoute } from '@angular/router';
+import { Intervention } from '../models/intervention.model';
 
 @Component({
   selector: 'app-chaudiere',
@@ -12,6 +13,7 @@ export class ChaudiereComponent implements OnInit {
   @Input() chaudiere!: Chaudiere;
   laChaudiere!: Chaudiere;
   id!: string;
+  interventions: Intervention[] = [];
 
   constructor(
     private chaudiereService: ChaudieresService,
