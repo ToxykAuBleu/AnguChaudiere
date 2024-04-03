@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Intervention } from '../models/intervention.model';
 
 @Component({
   selector: 'app-intervention',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './intervention.component.scss'
 })
 export class InterventionComponent {
-
+  @Input() intervention!: Intervention;
 }

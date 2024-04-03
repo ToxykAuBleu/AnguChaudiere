@@ -1,1 +1,7 @@
-<p>intervention works!</p>
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Intervention n°{{intervention.id}}</h3>
+        <p class="card-text">Date: {{intervention.date | date: 'dd/MM/yyyy à HH:mm'}}</p>
+        <p class="card-text">Description: {{intervention.description}}</p>
+    </div>
+</div>

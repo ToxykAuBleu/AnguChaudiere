@@ -6,15 +6,30 @@
         <p class="card-text">Marque: {{laChaudiere.marque}}</p>
         <p class="card-text">Modèle: {{laChaudiere.modele}}</p>
         <p class="card-text">Date mise en service: {{laChaudiere.dateMiseService | date: "dd/MM/yyyy à HH:mm:ss"}}</p>
-        <div *ngIf="id === undefined" class="card-footer">
+        
+        <!-- Dans la liste des chaudières -->
+        <div *ngIf="id === undefined; else detail" class="card-footer">
             <div *ngIf="interventions.length >= 1; else noInterventions">
-                <a routerLink="/chaudiere/{{laChaudiere.id}}">
+                <a routerLink="/chaudiere/{{laChaudiere.id}}" class="btn btn-info">
+                    <i class="bi bi-search"></i>
                     Voir le détail
                 </a>
             </div>
-            <ng-template #noInterventions>
-                <p class="text-center">Aucune intervention pour le moment.</p>
-            </ng-template>
         </div>
+        
+        <!-- Détail de la chaudières -->
+        <ng-template #detail>
+            <!-- Liste des interventions -->
+            <div *ngIf="interventions.length >= 1; else noInterventions">
+                <h4>Interventions</h4>
+                <div *ngFor="let intervention of interventions">
+                    <app-intervention [intervention]="intervention"></app-intervention>  
+                </div>
+            </div>
+        </ng-template>
     </div>
 </div>
+
+<ng-template #noInterventions>
+    <p class="text-center">Aucune intervention pour le moment.</p>
+</ng-template>

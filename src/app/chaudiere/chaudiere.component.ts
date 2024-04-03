@@ -3,6 +3,7 @@ import { Chaudiere } from '../models/chaudiere.model';
 import { ChaudieresService } from '../services/chaudieres.service';
 import { ActivatedRoute } from '@angular/router';
 import { Intervention } from '../models/intervention.model';
+import { InterventionsService } from '../services/interventions.service';
 
 @Component({
   selector: 'app-chaudiere',
@@ -17,17 +18,28 @@ export class ChaudiereComponent implements OnInit {
 
   constructor(
     private chaudiereService: ChaudieresService,
+    private interventionService: InterventionsService,
     private route: ActivatedRoute)
   { }
 
   ngOnInit(): void {    
     this.id = this.route.snapshot.params['id'];
     if (this.id !== undefined) {
-      this.chaudiereService.getChaudiereById(this.id).subscribe((chaudiere: Chaudiere) => {
+      // Récupération de la chaudière.
+      this.chaudiereService.getChaudiereById(this.id).subscribe(chaudiere => {
          this.laChaudiere = chaudiere;
+         this.refreshInterventions();
       });
     } else {
       this.laChaudiere = this.chaudiere;
+      this.refreshInterventions();
     };
+
+  }
+
+  refreshInterventions() {
+    this.interventionService.getInterventionsByIdChaudiere(this.laChaudiere.id).subscribe(interventions => {
+      this.interventions = interventions;
+    });
   }
 }
