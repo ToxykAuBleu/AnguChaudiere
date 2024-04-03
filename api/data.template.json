@@ -8,5 +8,14 @@
             "marque": "...",
             "modele": "..."
         }
+    ],
+    "interventions": [
+        {
+            "id": "...",
+            "idChaudiere": "...",
+            "date": "...",
+            "description": "...",
+            "tempPasse": "..."
+        }
     ]
 }
