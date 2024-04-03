@@ -1,19 +1,21 @@
-<div>
-    <h3>{{laChaudiere.nomClient}}</h3>
-    <p>Numéro série: {{laChaudiere.numeroSerie}}</p>
-    <p>Adresse: {{laChaudiere.adresseClient}}</p>
-    <p>Marque: {{laChaudiere.marque}}</p>
-    <p>Modèle: {{laChaudiere.modele}}</p>
-    <p>Date mise en service: {{laChaudiere.dateMiseService | date: "dd/MM/yyyy à HH:mm:ss"}}</p>
-    <div *ngIf="laChaudiere.interventions.length >= 1; else noInterventions">
-        <!-- TODO: afficher les interventions -->
-    </div>
-    <ng-template #noInterventions>
-        <p>Aucune interventions pour le moment.</p>
-    </ng-template>
-    <div *ngIf="id === undefined">
-        <a routerLink="/chaudiere/{{laChaudiere.numeroSerie}}">
-            Voir le détail
-        </a>
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">{{laChaudiere.nomClient}}</h3>
+        <p class="card-text">Numéro série: {{laChaudiere.numeroSerie}}</p>
+        <p class="card-text">Adresse: {{laChaudiere.adresseClient}}</p>
+        <p class="card-text">Marque: {{laChaudiere.marque}}</p>
+        <p class="card-text">Modèle: {{laChaudiere.modele}}</p>
+        <p class="card-text">Date mise en service: {{laChaudiere.dateMiseService | date: "dd/MM/yyyy à HH:mm:ss"}}</p>
+        <div *ngIf="laChaudiere.interventions.length >= 1; else noInterventions">
+            <!-- TODO: afficher les interventions -->
+        </div>
+        <ng-template #noInterventions>
+            <p>Aucune interventions pour le moment.</p>
+        </ng-template>
+        <div *ngIf="id === undefined" class="card-footer">
+            <a routerLink="/chaudiere/{{laChaudiere.numeroSerie}}">
+                Voir le détail
+            </a>
+        </div>
     </div>
 </div>

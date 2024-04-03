@@ -1,5 +1,7 @@
-<div class="container list-cd row row-cols-3">
-    <ng-container *ngFor="let chaudiere of listeChaudieres">
-        <app-chaudiere class="col" [chaudiere]="chaudiere"></app-chaudiere>
-    </ng-container>
+<div class="container">
+    <div class="row row-cols-3">
+        <ng-container *ngFor="let chaudiere of listeChaudieres">
+            <app-chaudiere class="col" [chaudiere]="chaudiere"></app-chaudiere>
+        </ng-container>
+    </div>
 </div>
