@@ -11,4 +11,9 @@
     <ng-template #noInterventions>
         <p>Aucune interventions pour le moment.</p>
     </ng-template>
+    <div *ngIf="id === undefined">
+        <a routerLink="/chaudiere/{{laChaudiere.numeroSerie}}">
+            Voir le détail
+        </a>
+    </div>
 </div>

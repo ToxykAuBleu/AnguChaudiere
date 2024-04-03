@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ChaudiereComponent implements OnInit {
   @Input() chaudiere!: Chaudiere;
   laChaudiere!: Chaudiere;
-  id!: number;
+  id!: string;
 
   constructor(
     private chaudiereService: ChaudieresService,
@@ -19,8 +19,8 @@ export class ChaudiereComponent implements OnInit {
   { }
 
   ngOnInit(): void {    
-    this.id = Number(this.route.snapshot.params['id']);
-    if (!Number.isNaN(this.id)) {
+    this.id = this.route.snapshot.params['id'];
+    if (this.id !== undefined) {
       this.laChaudiere = this.chaudiereService.getChaudiereById(this.id);
     } else {
       this.laChaudiere = this.chaudiere;

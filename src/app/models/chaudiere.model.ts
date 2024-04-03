@@ -6,10 +6,10 @@ export class Chaudiere {
     marque!: string;
     modele!: string;
     dateMiseService!: Date;
-    numeroSerie!: number;
+    numeroSerie!: string;
     interventions!: Intervention[];
 
-    constructor(nomClient: string, adresseClient: string, marque: string, modele: string, dateMiseService: Date, numeroSerie: number, interventions: Intervention[] = []) {
+    constructor(nomClient: string, adresseClient: string, marque: string, modele: string, dateMiseService: Date, numeroSerie: string, interventions: Intervention[] = []) {
         this.nomClient = nomClient;
         this.adresseClient = adresseClient;
         this.marque = marque;

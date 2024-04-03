@@ -11,7 +11,7 @@ export class ChaudieresService {
   getAllChaudieres(): Chaudiere[] {
     return [
       {
-        numeroSerie: 1,
+        numeroSerie: "1",
         nomClient: "PINGARD Mattis",
         adresseClient: "3 rue de la raviolie, 64100",
         dateMiseService: new Date(2024, 3, 20, 12, 23, 14),
@@ -22,7 +22,7 @@ export class ChaudieresService {
     ];
   }
 
-  getChaudiereById(id: number): Chaudiere {
+  getChaudiereById(id: string): Chaudiere {
     const chaudiere = this.getAllChaudieres().find(chaudiere => chaudiere.numeroSerie === id);
     if (!chaudiere) throw new Error('Chaudière pas trouvé');
     return chaudiere;
