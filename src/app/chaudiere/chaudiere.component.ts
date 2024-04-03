@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Chaudiere } from '../models/chaudiere.model';
 import { ChaudieresService } from '../services/chaudieres.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-chaudiere',
@@ -9,10 +10,20 @@ import { ChaudieresService } from '../services/chaudieres.service';
 })
 export class ChaudiereComponent implements OnInit {
   @Input() chaudiere!: Chaudiere;
+  laChaudiere!: Chaudiere;
+  id!: number;
 
-  constructor(private chaudiereService: ChaudieresService) { }
+  constructor(
+    private chaudiereService: ChaudieresService,
+    private route: ActivatedRoute)
+  { }
 
-  ngOnInit(): void {
-    if (!this.chaudiere) this.chaudiere = this.chaudiereService.getChaudiereById(1);
+  ngOnInit(): void {    
+    this.id = Number(this.route.snapshot.params['id']);
+    if (!Number.isNaN(this.id)) {
+      this.laChaudiere = this.chaudiereService.getChaudiereById(this.id);
+    } else {
+      this.laChaudiere = this.chaudiere;
+    };
   }
 }

@@ -23,8 +23,8 @@ export class ChaudieresService {
   }
 
   getChaudiereById(id: number): Chaudiere {
-      const chaudiere = this.getAllChaudieres().find(chaudiere => chaudiere.numeroSerie === id);
-      if (!chaudiere) throw new Error('Chaudière pas trouvé');
-      return chaudiere;
+    const chaudiere = this.getAllChaudieres().find(chaudiere => chaudiere.numeroSerie === id);
+    if (!chaudiere) throw new Error('Chaudière pas trouvé');
+    return chaudiere;
   }
 }

@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { ChaudiereComponent } from './chaudiere/chaudiere.component';
+import { ListChaudiereComponent } from './list-chaudiere/list-chaudiere.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    ChaudiereComponent
+    ChaudiereComponent,
+    ListChaudiereComponent
   ],
   imports: [
     BrowserModule,
