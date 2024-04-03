@@ -1,21 +1,20 @@
 <div class="card">
     <div class="card-body">
         <h3 class="card-title">{{laChaudiere.nomClient}}</h3>
-        <p class="card-text">Numéro série: {{laChaudiere.numeroSerie}}</p>
+        <p class="card-text">Numéro série: {{laChaudiere.id}}</p>
         <p class="card-text">Adresse: {{laChaudiere.adresseClient}}</p>
         <p class="card-text">Marque: {{laChaudiere.marque}}</p>
         <p class="card-text">Modèle: {{laChaudiere.modele}}</p>
         <p class="card-text">Date mise en service: {{laChaudiere.dateMiseService | date: "dd/MM/yyyy à HH:mm:ss"}}</p>
-        <div *ngIf="interventions.length >= 1; else noInterventions">
-            <!-- TODO: afficher les interventions -->
-        </div>
-        <ng-template #noInterventions>
-            <p>Aucune interventions pour le moment.</p>
-        </ng-template>
         <div *ngIf="id === undefined" class="card-footer">
-            <a routerLink="/chaudiere/{{laChaudiere.numeroSerie}}">
-                Voir le détail
-            </a>
+            <div *ngIf="interventions.length >= 1; else noInterventions">
+                <a routerLink="/chaudiere/{{laChaudiere.id}}">
+                    Voir le détail
+                </a>
+            </div>
+            <ng-template #noInterventions>
+                <p class="text-center">Aucune intervention pour le moment.</p>
+            </ng-template>
         </div>
     </div>
 </div>

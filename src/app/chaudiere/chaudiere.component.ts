@@ -23,7 +23,9 @@ export class ChaudiereComponent implements OnInit {
   ngOnInit(): void {    
     this.id = this.route.snapshot.params['id'];
     if (this.id !== undefined) {
-      this.laChaudiere = this.chaudiereService.getChaudiereById(this.id);
+      this.chaudiereService.getChaudiereById(this.id).subscribe((chaudiere: Chaudiere) => {
+         this.laChaudiere = chaudiere;
+      });
     } else {
       this.laChaudiere = this.chaudiere;
     };

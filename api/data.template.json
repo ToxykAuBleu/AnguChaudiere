@@ -1,0 +1,12 @@
+{
+    "chaudieres": [
+        {
+            "id": "",
+            "nomClient": "...",
+            "adresseClient": "...",
+            "dateMiseService": "...",
+            "marque": "...",
+            "modele": "..."
+        }
+    ]
+}

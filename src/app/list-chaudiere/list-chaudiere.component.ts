@@ -13,6 +13,6 @@ export class ListChaudiereComponent implements OnInit {
   constructor(private chaudiereService: ChaudieresService) {}
 
   ngOnInit(): void {
-    this.listeChaudieres = this.chaudiereService.getAllChaudieres();
+    this.chaudiereService.getAllChaudieres().subscribe(chaudieres => { this.listeChaudieres = chaudieres });
   }
 }

@@ -4,7 +4,7 @@ export class Chaudiere {
     marque!: string;
     modele!: string;
     dateMiseService!: Date;
-    numeroSerie!: string;
+    id!: string;
 
     constructor(nomClient: string, adresseClient: string, marque: string, modele: string, dateMiseService: Date, numeroSerie: string) {
         this.nomClient = nomClient;
@@ -12,6 +12,6 @@ export class Chaudiere {
         this.marque = marque;
         this.modele = modele;
         this.dateMiseService = dateMiseService;
-        this.numeroSerie = numeroSerie;
+        this.id = numeroSerie;
     }
 }

@@ -8,6 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { ChaudiereComponent } from './chaudiere/chaudiere.component';
 import { ListChaudiereComponent } from './list-chaudiere/list-chaudiere.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { InterventionComponent } from './intervention/intervention.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     HeaderComponent,
     ChaudiereComponent,
-    ListChaudiereComponent
+    ListChaudiereComponent,
+    InterventionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

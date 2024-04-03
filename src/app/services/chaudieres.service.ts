@@ -1,29 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Chaudiere } from '../models/chaudiere.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChaudieresService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getAllChaudieres(): Chaudiere[] {
-    return [
-      {
-        numeroSerie: "1",
-        nomClient: "PINGARD Mattis",
-        adresseClient: "3 rue de la raviolie, 64100",
-        dateMiseService: new Date(2024, 3, 20, 12, 23, 14),
-        marque: "Tefal",
-        modele: "Quarante Deux"
-      }
-    ];
+  getAllChaudieres(): Observable<Chaudiere[]> {
+    return this.http.get<Chaudiere[]>('http://localhost:3000/chaudieres');
   }
 
-  getChaudiereById(id: string): Chaudiere {
-    const chaudiere = this.getAllChaudieres().find(chaudiere => chaudiere.numeroSerie === id);
-    if (!chaudiere) throw new Error('Chaudière pas trouvé');
-    return chaudiere;
+  getChaudiereById(id: string): Observable<Chaudiere> {
+    return this.http.get<Chaudiere>('http://localhost:3000/chaudieres/' + id);    
   }
 }
