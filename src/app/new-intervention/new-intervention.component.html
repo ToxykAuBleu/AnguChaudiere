@@ -6,7 +6,7 @@
                 <div *ngIf="champ[1] === 'select'; else normal">
                     <label for="{{champ[0]}}">{{champ[2]}}</label>
                     <select class="form-select" id="{{champ[0]}}" formControlName="{{champ[0]}}">
-                        <option *ngFor="let option of possibleChaudieres" [value]="option">{{option.id}} - {{option.nomClient}}</option>
+                        <option *ngFor="let option of possibleChaudieres" [value]="option.id">{{option.id}} - {{option.nomClient}}</option>
                     </select>
                 </div>
 
