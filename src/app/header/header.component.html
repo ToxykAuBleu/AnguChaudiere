@@ -1,4 +1,4 @@
-<div class="bg-primary-subtle">
+<div class="bg-primary-subtle rounded-pill m-2">
     <nav class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom mx-5">
         <div class="col-md-3 mb-2 mb-md-0">
             <a routerLink="/" class="d-inline-flex link-body-emphasis text-decoration-none fs-5">
@@ -14,7 +14,28 @@
         </ul>
     
         <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-secondary"><i class="bi bi-patch-question"></i> A propos</button>
+            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#aProposModal"><i class="bi bi-patch-question"></i> A propos</button>
         </div>
     </nav>
 </div>
+  
+<div class="modal fade modal-sm" id="aProposModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">A propos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+            <p>Projet réalisé par 
+                <a href="https://github.com/ToxykAuBleu"><i class="bi bi-github"></i> ToxykAuBleu</a>.
+                <br><br>
+                <i class="bi bi-tag-fill"></i>Version: 1.0.0
+                <br>
+                <a href="https://github.com/ToxykAuBleu/AnguChaudère">[Code source]</a>
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
