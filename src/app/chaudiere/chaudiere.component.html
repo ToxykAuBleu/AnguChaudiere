@@ -21,7 +21,7 @@
         <ng-template #detail>
             <!-- Liste des interventions -->
             <div *ngIf="interventions.length >= 1; else noInterventions">
-                <h4>Interventions</h4>
+                <h4>Interventions ({{interventions.length}})</h4>
                 <div class="row row-cols-3">
                     <div *ngFor="let intervention of interventions">
                         <app-intervention class="col" [intervention]="intervention"></app-intervention>  

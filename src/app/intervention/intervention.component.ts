@@ -8,4 +8,5 @@ import { Intervention } from '../models/intervention.model';
 })
 export class InterventionComponent {
   @Input() intervention!: Intervention;
+  @Input() fromList: boolean = false;
 }

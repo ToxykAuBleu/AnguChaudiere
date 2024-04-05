@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row row-cols-3">
         <ng-container *ngFor="let intervention of listeInterventions">
-            <app-intervention class="col" [intervention]="intervention"></app-intervention>
+            <app-intervention class="col" [intervention]="intervention" [fromList]="true"></app-intervention>
         </ng-container>
     </div>
 </div>
