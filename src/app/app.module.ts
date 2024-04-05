@@ -11,6 +11,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InterventionComponent } from './intervention/intervention.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListInterventionComponent } from './list-intervention/list-intervention.component';
+import { NewInterventionComponent } from './new-intervention/new-intervention.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,16 @@ import { ListInterventionComponent } from './list-intervention/list-intervention
     ChaudiereComponent,
     ListChaudiereComponent,
     InterventionComponent,
-    ListInterventionComponent
+    ListInterventionComponent,
+    NewInterventionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

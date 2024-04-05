@@ -1,0 +1,32 @@
+<div class="container">
+    <h3>Nouvelle intervention</h3>
+    <form method="post" [formGroup]="formulaire">
+        <ng-container *ngFor="let champ of champsForm">
+            <div class="form-floating mb-3">
+                <div *ngIf="champ[1] === 'select'; else normal">
+                    <label for="{{champ[0]}}">{{champ[2]}}</label>
+                    <select class="form-select" id="{{champ[0]}}" formControlName="{{champ[0]}}">
+                        <option *ngFor="let option of possibleChaudieres" [value]="option">{{option.id}} - {{option.nomClient}}</option>
+                    </select>
+                </div>
+
+                <ng-template #normal>
+                    <input type="{{champ[1]}}" [ngClass]="champ[1] === 'select' ? 'form-select' : 'form-control'"
+                     id="{{champ[0]}}" formControlName="{{champ[0]}}" placeholder="{{champ[3]}}">
+                    <label for="{{champ[0]}}">{{champ[2]}}</label>
+                </ng-template>
+
+                <div *ngIf="formulaire.get(champ[0])?.invalid &&
+                formulaire.get(champ[0])?.errors &&
+                (formulaire.get(champ[0])?.dirty || formulaire.get(champ[0])?.touched)">
+                    <small class="text-danger" *ngIf="formulaire.get(champ[0])?.hasError('required')">Ce champ est requis.</small>
+                </div>
+            </div>
+        </ng-container>
+
+        <button type="submit" class="btn btn-primary" (submit)="submit()" (click)="submit()"
+         [disabled]="formulaire.invalid">
+         Ajouter l'intervention
+        </button>
+    </form>
+</div>

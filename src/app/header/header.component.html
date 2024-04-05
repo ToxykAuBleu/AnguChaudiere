@@ -1,17 +1,20 @@
-<nav class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom mx-5">
-    <div class="col-md-3 mb-2 mb-md-0">
-        <a routerLink="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-            {{ title }}
-        </a>
-    </div>
+<div class="bg-primary-subtle">
+    <nav class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom mx-5">
+        <div class="col-md-3 mb-2 mb-md-0">
+            <a routerLink="/" class="d-inline-flex link-body-emphasis text-decoration-none fs-5">
+                {{ title }}
+            </a>
+        </div>
+        
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a class="nav-link px-2 btn" routerLink="/" [ngClass]="{ 'disabled': currentRoute === '/' ? true : null }"><i class="bi bi-house-fill"></i>Accueil</a> </li>
+            <li><a class="nav-link px-2 btn" routerLink="/chaudieres" [ngClass]="{ 'disabled': currentRoute === '/chaudieres' ? true : null }"><i class="bi bi-card-list"></i> Liste des chaudières</a></li>
+            <li><a class="nav-link px-2 btn" routerLink="/interventions" [ngClass]="{ 'disabled': currentRoute === '/interventions' ? true : null }"><i class="bi bi-card-list"></i> Liste des interventions</a></li>
+            <li><a class="nav-link px-2 btn" routerLink="/intervention/new" [ngClass]="{ 'disabled': currentRoute === '/intervention/new' ? true : null }"><i class="bi bi-journal-plus"></i> Nouvelle intervention</a></li>
+        </ul>
     
-    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a class="nav-link px-2 btn" routerLink="/" [ngClass]="{ 'disabled': currentRoute === '/' ? true : null }"><i class="bi bi-house-fill"></i>Accueil</a> </li>
-        <li><a class="nav-link px-2 btn" routerLink="/chaudieres" [ngClass]="{ 'disabled': currentRoute === '/chaudieres' ? true : null }"><i class="bi bi-card-list"></i> Liste des chaudières</a></li>
-        <li><a class="nav-link px-2 btn" routerLink="/interventions" [ngClass]="{ 'disabled': currentRoute === '/interventions' ? true : null }"><i class="bi bi-card-list"></i> Liste des interventions</a></li>
-    </ul>
-
-    <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-secondary"><i class="bi bi-patch-question"></i> A propos</button>
-    </div>
-</nav>
+        <div class="col-md-3 text-end">
+            <button type="button" class="btn btn-outline-secondary"><i class="bi bi-patch-question"></i> A propos</button>
+        </div>
+    </nav>
+</div>
